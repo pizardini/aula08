@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:sqflite_common_ffi/sqflite_ffi.dart';
-import 'dart:io';
+import 'package:sqflite_common_ffi/sqflite_ffi.dart'; //Rodar o comando flutter pub add sqflite_common_ffi
+import 'dart:io'; //Necessário para o Platform.isWindows
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
-  //Dependência necessária para rodar em Desktop
+  //Dependência necessária para rodar em Windows
   if (Platform.isWindows) {
     sqfliteFfiInit();
     databaseFactory = databaseFactoryFfi;
